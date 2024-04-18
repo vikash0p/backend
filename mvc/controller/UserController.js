@@ -63,7 +63,8 @@ export const Login = async (req, res) => {
                     path: "/",
                     expires: new Date(Date.now() +  3* 24 * 60 * 60 * 1000), //3 days
                     httpOnly: true,
-                    
+
+
 
                 })
                 res.status(200).json({
@@ -116,7 +117,7 @@ export const Login = async (req, res) => {
 export const VerifyToken = async (req, res, next) => {
     const cookies = req.headers.cookie;
     console.log("🚀 ~ file: UserController.js:116 ~ cookies:", cookies);
-    const token = cookies?.split("=")[1];
+    const token = cookies.split("=")[1];
     console.log("🚀 ~ file: UserController.js:118 ~ token:", token);
 
     // const header = req.headers['authorization'];
